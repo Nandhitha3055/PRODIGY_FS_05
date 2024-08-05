@@ -1,0 +1,161 @@
+html{
+  background: linear-gradient(45deg, #03AED2, #d71472,#f29c8c);
+  background-repeat:no-repeat;
+  backface-visibility:fill;
+  background-size: 3000px 1080px;
+  background-attachment: fixed;
+  /* margin: 0; */
+}
+
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:focus {
+  outline: none;
+}
+
+.col-3 {
+  float: right;
+  width: 60%;
+  margin: 20px 3%;
+  margin-left:20%;
+  position: relative;
+}
+
+
+input{
+  font:"Lato", Arial, sans-serif;
+  color: #ffffff;
+  width:100%;
+  height:60px;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+input::placeholder {
+    color: white;
+}
+
+.effect-9 {
+  border: 1px solid #ffffff;
+  padding: 7px 14px 9px;
+  transition: 0.4s;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.effect-9 ~ .focus-border:before,
+.effect-9 ~ .focus-border:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 3px;
+  background-color: white;
+  transition: 0.2s;
+  transition-delay: 0.2s;
+}
+.effect-9 ~ .focus-border:after {
+  top: auto;
+  bottom: 0;
+  right: auto;
+  left: 0;
+  transition-delay: 0.6s;
+}
+.effect-9 ~ .focus-border i:before,
+.effect-9 ~ .focus-border i:after {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background-color: white;
+  transition: 0.2s;
+}
+.effect-9 ~ .focus-border i:after {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: 0;
+  transition-delay: 0.4s;
+}
+.effect-9:focus ~ .focus-border:before,
+.effect-9:focus ~ .focus-border:after {
+  width: 300px;
+  /* margin-left:25%; */
+  transition: 0.2s;
+  transition-delay: 0.6s;
+}
+.effect-9:focus ~ .focus-border:after {
+  transition-delay: 0.2s;
+}
+.effect-9:focus ~ .focus-border i:before,
+.effect-9:focus ~ .focus-border i:after {
+  height: 100%;
+  /* margin-left:25%; */
+  transition: 0.2s;
+}
+.effect-9:focus ~ .focus-border i:after {
+  transition-delay: 0.4s;
+}
+
+.form form{
+  display: flex;
+  flex-direction:column;
+}
+.signin{
+  margin-top:10%;
+}
+.signup{
+  margin-top:2%;
+}
+.form{
+  background: rgba(255, 255, 255, 0.1);
+  width: 500px;
+  padding: 20px 20px 20px 20px;
+  text-align: center;
+}
+
+.form form-up{
+  display: flex;
+  flex-direction:column;
+}
+
+.form-up{
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: 3%;
+  width: 500px;
+  text-align: center;
+}
+
+
+
+h1{
+  font-family: 'Damion', cursive;
+  font-weight: 400;
+  color: white;
+  font-size: 35px;
+  text-align:center;
+}
+
+
+button{
+  display: inline-block;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  padding: 0 24px;
+  border-radius: 50px;
+  min-width: 150px;
+  height: 40px;
+  font-size: 18px;
+  background-color: green;
+  font-weight: 500px;
+  color: white;
+  margin-left:5%;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}  

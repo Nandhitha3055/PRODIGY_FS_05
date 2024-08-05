@@ -1,0 +1,387 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background:#e6e5e0;
+}
+
+.header{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  background:white;
+}
+
+.header .search{
+  margin:7px;
+  display:flex;
+  flex-direction:row;
+}
+
+i{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+a{
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.icon-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: color 0.3s;
+}
+.icon-button i {
+  font-size: 18px;
+  color: grey;
+  transition: color 0.3s;
+}
+.icon-button h4 {
+  margin-top: 5px;
+  font-size: 14px;
+  color: grey;
+  transition: color 0.3s;
+  font-weight: normal;
+}
+
+.icon-button:hover i,
+.icon-button:hover h4 {
+    color: black;
+}
+
+input{
+  height: 100%;
+  width: 170%;
+  outline: none;
+  font-size: 17px;
+  padding-right: 20px;
+  border: 1px solid lightgrey;
+  /* border-radius: 25px; */
+  text-align: center;
+}
+
+
+.input-icons {
+  width: 100%;
+  heigth:100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction:row;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+ 
+.input-icons button {
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  border: none; 
+  background-color: transparent; 
+  cursor: pointer; 
+}
+
+.icon {
+  padding: 10px;
+  min-width: 40px;
+}
+
+.container {
+  margin-top: 0.7%;
+  margin-left:6%;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+}
+
+
+.wrapper{
+  width: 850px;
+  border-radius: 15px 15px 15px 15px;
+  background:white;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+
+
+.wrapper1{
+  width: 300px;
+  /* height: 300px; */
+  border-radius: 15px 15px 15px 15px;
+  background:white;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+
+.wrap-comment{
+  width: 300px;
+  /* height: 100%; */
+  border-radius: 15px 15px 15px 15px;
+  background:white;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+
+.post{
+  padding:15px 15px 15px 15px;
+  width: 850px;
+  border-radius: 15px 15px 15px 15px;
+  background:white;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+
+.post_cover{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.post form{
+  padding: 10px 30px 10px 30px;
+  color:black;
+  center;
+  align-items:center;
+}
+
+.post .title{
+  padding: 10px 10px 10px 10px;
+  color: #fff;
+  border-radius: 15px 15px 0px 0px;
+  background: linear-gradient(45deg, #03AED2, #d71472,#f29c8c);
+}
+
+
+
+.wrapper .title, .wrapper1 .title {
+  padding: 10px 10px 10px 10px;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(45deg, #03AED2, #d71472,#f29c8c);
+}
+.wrapper1 form, .wrapper form{
+  padding: 10px 30px 10px 30px;
+  color:black;
+}
+
+.profile-container{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+}
+
+.btn{
+  display: inline-block;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  padding: 0 24px;
+  border-radius: 50px;
+  min-width: 150px;
+  height: 40px;
+  font-size: 18px;
+  background-color: green;
+  font-weight: 500px;
+  color: white;
+  margin-left:5%;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}  
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  max-width: 400px;
+  padding: 10px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.form-container input[type=text]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+
+.form-container input[type=text]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+
+
+.form-container .cancel {
+  background-color: red;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+textarea{
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  resize: none;
+}
+
+.container .tagsInput{
+  width: 85%;
+  position: relative;
+  margin: 6px 0;
+  padding: 5px;
+  flex: 1;
+  min-width: 100px;
+
+}
+.container .tagsInput:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.notification { 
+  background-color: #555;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+} 
+.notification:hover {
+  background: red;
+}
+.notification .badge {
+  position: absolute;
+  top: -10px; 
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: row;
+  float: right;
+  }
+
+
+@media (max-width: 1200px) {
+  .wrapper, .post {
+    width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wrapper, .post {
+    width: 100%;
+  }
+
+  .header .search {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper1 {
+    width: 90%;
+  }
+
+  .btn {
+    width: 100%;
+    min-width: auto;
+    font-size: 16px;
+  }
+
+  .icon-button {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    justify-content: center;
+  }
+
+  .container {
+    margin-left: 0;
+  }
+
+  .icon-button i {
+    font-size: 16px;
+  }
+
+  .icon-button h4 {
+    font-size: 12px;
+  }
+
+  .input-icons {
+    flex-direction: column;
+  }
+
+  .input-icons button {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 15px;
+  margin-left: 45%;
+  background-color: #03AED2;
+}
+.stickyLeft {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 20px;
+  margin-left: 85%;
+  background-color: green;
+}

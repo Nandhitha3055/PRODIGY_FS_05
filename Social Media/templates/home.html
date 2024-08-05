@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home page</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhXur6FztVZ11vbL00_9y6xjdihDvGRdADHw&s"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>  
+  {% if name == "" or name == "Sign in" or name == "Email or Password is not a match"%}
+  <div class="signin form">  
+    <div><h1><i>Signin</i></h1></div>
+    <h3 class="invalid" style="font-size:25px; color:white;  text-align: center;">{{name}}</h3>
+    <form action="/get" method="POST">
+      <div class="col-3">
+        <input class="email effect-9" name ="email" type="email" placeholder="Email Id" required>
+        <span class="focus-border">
+          <i></i>
+        </span>
+      </div>
+      <div class="col-3">
+        <input class="password effect-9" type="password" name="Password" required placeholder="Password">
+        <span class="focus-border">
+          <i></i>
+        </span>
+      </div>
+      <div><button onclick="btnClicked()">Login</button></div>
+    </form>
+        <h3 style="color:white;">New to this platform?&nbsp;<a href="/signup" style="text-decoration:none">signup</a></h3>
+
+  </div>
+  
+  {% elif name == "signup"%}
+  <div class="signup form">
+    <div><h1><i>Create Account</i></h1></div>
+  <form action="/verify" method="POST" enctype="multipart/form-data" >
+       <h3 class="invalid" style="color:white;  text-align: center; margin-top: 3%;"></h3>
+        <div class="col-3">
+            <input class="FirstName effect-9" type="text" name="FirstName" placeholder="First Name" required>
+            <span class="focus-border">
+              <i></i>
+            </span>
+          </div>
+        <div class="col-3">
+            <input class="LastName effect-9" type="text" name="LastName" placeholder="Last Name" required>
+            <span class="focus-border">
+              <i></i>
+            </span>
+        </div>
+      <div class="col-3">
+          <input class="Phone effect-9" type="text" name="PhoneNumber" placeholder="Phone Number" required>
+            <span class="focus-border">
+              <i></i>
+            </span>
+      </div>
+      <div class="col-3">
+            <input class="email effect-9" type="email" name="email" placeholder="Email Id" required>
+            <span class="focus-border">
+              <i></i>
+            </span>
+      </div>
+      <div class="col-3">
+            <input class="password effect-9" type="password" name="Password" placeholder="Password" required>
+            <span class="focus-border">
+              <i></i>
+            </span>
+      </div>
+      <div class="col-3">
+            <input class="Confirm effect-9" type="password" name="Confirm-Password" placeholder="Confirm Password" required>
+            <span class="focus-border">
+              <i></i>
+            </span>
+      </div>
+      <br>
+      <div class="col-3" style="color:red;background:white;">
+        <h5>Password must contain atleast 1 uppercase,<br>&emsp;&emsp;&emsp;1 special Character and 1 digit</h5>
+      </div>
+      <div class="pass-link"><br></div>
+    <div class="col-3" style="color:red;">
+    <!-- <form action="/upload" method="post" enctype="multipart/form-data"> -->
+        <input type="file" name="file" id="fileInput" accept="image/*" required>
+        <div id="message"></div>
+        <button type="submit" onclick="btnClicked()"><span>Sign up</span></button>
+      <!-- <div id="message"></div> -->
+    <br>
+    <!-- <div>
+        <button class="btn sub" onclick="btnClicked()"><span>Sign up</span></button>
+    </div> -->
+      <div class = "newuser">
+          <h3 style="color:white;">Already have an account&nbsp;<a href="/" style="text-decoration:none">login</a></h3>
+      </div>
+      </div>
+      </form>
+</div>
+  {% endif %}
+   <div id="name-container" data-name="{{ name }}"></div>
+
+   {% include "scripts.html" %}
+  <script>
+    function btnClicked(){
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+      var file = event.target.files;
+      var messageDiv = document.getElementById('message');
+      console.log(file);
+      messageDiv.innerHTML = '';
+        if (file.size > 1048576) {
+          messageDiv.innerHTML += `<p>${file.name} is too big! Maximum file size is 1MB.</p>`;
+          this.value = ''; 
+        }
+
+        else if (messageDiv.innerHTML === '') {
+          messageDiv.innerHTML = '<p>All files are within the size limit.</p>';
+      }
+    });
+    }
+  </script>
+
+</body>
+</html>
